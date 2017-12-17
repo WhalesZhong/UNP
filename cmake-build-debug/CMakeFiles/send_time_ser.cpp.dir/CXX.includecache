@@ -1,0 +1,24 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/open_source/webtcp/send_time_ser.cpp
+iostream
+-
+netinet/in.h
+-
+unp.h
+/open_source/webtcp/unp.h
+memory.h
+-
+cstdio
+-
+zconf.h
+-
+
+/open_source/webtcp/unp.h
+

@@ -1,0 +1,4 @@
+/open_source/webtcp/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/open_source/webtcp/cmake-build-debug/CMakeFiles/edit_cache.dir
+/open_source/webtcp/cmake-build-debug/CMakeFiles/send_time_ser.cpp.dir
+/open_source/webtcp/cmake-build-debug/CMakeFiles/get_time_cli.cpp.dir

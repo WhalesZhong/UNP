@@ -1,0 +1,4 @@
+/softs/clion-2017.1.1/bin/cmake/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /open_source/webtcp
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /open_source/webtcp/cmake-build-debug

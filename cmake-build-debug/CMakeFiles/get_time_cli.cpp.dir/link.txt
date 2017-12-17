@@ -1,0 +1,1 @@
+/usr/bin/c++   -g   CMakeFiles/get_time_cli.cpp.dir/get_time_cli.cpp.o  -o ../bin/get_time_cli.cpp 
