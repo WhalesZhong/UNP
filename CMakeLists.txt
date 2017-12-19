@@ -34,3 +34,5 @@ set(SOURCE_FILES get_time_cli.cpp)
 # 生成可执行文件
 add_executable(get_time_cli.cpp ${PROJECT_SOURCE_DIR}/get_time_cli.cpp)
 add_executable(send_time_ser.cpp ${PROJECT_SOURCE_DIR}/send_time_ser.cpp)
+add_executable(str_echo_ser.cpp ${PROJECT_SOURCE_DIR}/str_echo_ser.cpp)
+add_executable(str_echo_cli.cpp ${PROJECT_SOURCE_DIR}/str_echo_cli.cpp)
