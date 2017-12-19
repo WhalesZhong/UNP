@@ -9,8 +9,9 @@ using namespace std;
 
 
 int get_server_time(string ip){
-    int sock_fd, n;
-    string receive_line;
+    int sock_fd;
+    ssize_t n;
+    char receive_line[MAXLINE];
     struct sockaddr_in servaddr;
     //创建网际字节流套接字
     sock_fd = socket(AF_INET, SOCK_STREAM, 0);
@@ -34,6 +35,12 @@ int get_server_time(string ip){
         cout << "connect error" << endl;
     }
 
+    while ((n = read(sock_fd, receive_line, MAXLINE)) > 0){
+        cout << receive_line << endl;
+    }
+    if (n < 0){
+        cout << "read error" << endl;
+    }
     return 0;
 }
 
