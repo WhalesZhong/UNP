@@ -41,8 +41,10 @@ int main(int argc, char **argv){
 
     for ( ; ; ){
         rset = allset;
+        //获取每一次就绪的描述符
         nready = select(maxfd+1, &rset, NULL, NULL, NULL);
 
+        //监测监听套接字是否就绪,如果就绪将accept建立的连接套接字加入描述符集中
         if (FD_ISSET(listenfd, &rset)){
             clilen = sizeof(cliaddr);
             connfd = accept(listenfd, (sockaddr*)&cliaddr, &clilen);
@@ -69,11 +71,29 @@ int main(int argc, char **argv){
                 continue;
             }
         }
+
+        //除了监测监听套接字,还要遍历已连接的描述符数组,检查是否就绪,如果就绪处理数据
+        for (i = 0; i <= maxi; i++){
+            if ((sockfd = client[i]) < 0){
+                continue;
+            }
+            if (FD_ISSET(sockfd, &rset)){
+                if ((n = read(sockfd, buf, MAXLINE)) == 0){
+                    close(connfd);
+                    FD_CLR(sockfd, &allset);
+                    client[i] = -1;
+                } else {
+                    write(sockfd, buf, n);
+                }
+
+                if (--nready <= 0){
+                    break;
+                }
+            }
+        }
     }
 
-    for (i = 0; i <= maxi; i++){
 
-    }
 
 
 }
